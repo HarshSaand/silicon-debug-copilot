@@ -4,8 +4,6 @@ Silicon Debug Copilot asks a narrow question: can a small, local workflow help a
 
 The current prototype parses UTF-8 logs, looks for six supported signatures, gathers the matching log lines, and returns a structured hypothesis or abstains. It exposes the workflow through FastAPI and a Streamlit workbench. It does not diagnose silicon, inspect waveforms or registers, call a language model, or execute corrective actions.
 
-> **Current scope:** deterministic system-log triage on public or explicitly synthetic data. The repository contains no AMD data, production hardware logs, verified silicon root causes, or fab-qualified decision thresholds.
-
 ![Supported PCIe triage in the local workbench](outputs/screenshots/supported-pcie.jpg)
 
 The paired abstention example is saved at [`outputs/screenshots/abstained-ambiguous.jpg`](outputs/screenshots/abstained-ambiguous.jpg).
