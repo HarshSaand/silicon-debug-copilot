@@ -1,0 +1,38 @@
+project:
+  name: Silicon Debug Copilot
+  positioning: synthetic system-log triage benchmark; not silicon root-cause ground truth
+  seed: 20260901
+
+data:
+  loghub_dir: data/sample/loghub_2k
+  synthetic_incidents: data/sample/synthetic_incidents.jsonl
+  benchmark_manifest: evals/frozen_benchmark.jsonl
+  runbooks_dir: data/runbooks
+  index_path: data/sample/runbook_index.json
+
+benchmark:
+  version: "1.1.0"
+  frozen_cases: 80
+  categories:
+    timeout: 10
+    pcie_link: 10
+    memory_ecc: 10
+    thermal: 10
+    firmware_mismatch: 10
+    driver_reset: 10
+    unknown_mixed: 10
+    normal: 10
+  split_by_case_number:
+    train: [1, 5]
+    dev: [6, 7]
+    test: [8, 10]
+
+evaluation:
+  top_k: 3
+  acceptance:
+    category_macro_f1: 0.70
+    anomaly_recall: 0.80
+    evidence_recall_at_k: 0.75
+    citation_precision: 0.90
+    schema_success: 0.98
+    invented_evidence_ids: 0

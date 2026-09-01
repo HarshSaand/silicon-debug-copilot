@@ -1,0 +1,13 @@
+{
+  "split": "test",
+  "system": "silicon_debug-core",
+  "metrics": {
+    "cases": 24,
+    "schema_success": 1.0,
+    "invented_evidence_ids": 0,
+    "evidence_recall_at_3": 0.9333333333333333,
+    "citation_precision": 1.0,
+    "anomaly_recall": 1.0,
+    "category_macro_f1": 1.0
+  }
+}

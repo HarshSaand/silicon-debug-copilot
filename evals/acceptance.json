@@ -1,0 +1,15 @@
+{
+  "benchmark_version": "1.1.0",
+  "frozen_cases": 80,
+  "frozen_test_cases": 24,
+  "frozen_sha256": "83117600460df90f67dfbea4ef6abcb95a46a656163bd211645751922b89c6d6",
+  "scope": "synthetic system-log triage, not verified silicon root-cause diagnosis",
+  "minimum": {
+    "category_macro_f1": 0.7,
+    "anomaly_recall": 0.8,
+    "evidence_recall_at_3": 0.75,
+    "citation_precision": 0.9,
+    "schema_success": 0.98,
+    "invented_evidence_ids": 0
+  }
+}

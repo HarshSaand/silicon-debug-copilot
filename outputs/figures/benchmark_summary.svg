@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Saved integrated-workflow results</title>
+  <desc id="desc">Bar chart showing macro F1 1.0, anomaly recall 1.0, evidence recall at 3 0.933, citation precision 1.0, and schema success 1.0 on 24 synthetic test cases.</desc>
+  <rect width="1200" height="560" fill="#f5f8fa"/>
+  <text x="70" y="68" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#102a3a">Saved integrated-workflow results</text>
+  <text x="70" y="104" font-family="Arial, sans-serif" font-size="20" fill="#4b6472">24 frozen synthetic test cases · regression check, not field accuracy</text>
+  <line x1="360" y1="145" x2="1110" y2="145" stroke="#b9c8d0"/>
+  <line x1="360" y1="475" x2="1110" y2="475" stroke="#b9c8d0"/>
+  <g font-family="Arial, sans-serif" font-size="21" fill="#173949">
+    <text x="70" y="190">Category macro-F1</text>
+    <text x="70" y="255">Anomaly recall</text>
+    <text x="70" y="320">Evidence recall@3</text>
+    <text x="70" y="385">Citation precision</text>
+    <text x="70" y="450">Schema success</text>
+  </g>
+  <g fill="#197b8c">
+    <rect x="360" y="160" width="750" height="40" rx="4"/>
+    <rect x="360" y="225" width="750" height="40" rx="4"/>
+    <rect x="360" y="290" width="700" height="40" rx="4"/>
+    <rect x="360" y="355" width="750" height="40" rx="4"/>
+    <rect x="360" y="420" width="750" height="40" rx="4"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#102a3a">
+    <text x="1124" y="188">1.000</text>
+    <text x="1124" y="253">1.000</text>
+    <text x="1074" y="318">0.933</text>
+    <text x="1124" y="383">1.000</text>
+    <text x="1124" y="448">1.000</text>
+  </g>
+  <text x="70" y="525" font-family="Arial, sans-serif" font-size="18" fill="#5f7079">Source: evals/core_results.json · system: silicon_debug-core · split: test</text>
+</svg>

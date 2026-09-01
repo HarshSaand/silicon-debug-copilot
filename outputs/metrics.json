@@ -1,0 +1,32 @@
+{
+  "benchmark": {
+    "version": "1.1.0",
+    "total_cases": 80,
+    "test_cases": 24,
+    "sha256": "83117600460df90f67dfbea4ef6abcb95a46a656163bd211645751922b89c6d6",
+    "scope": "explicitly synthetic system-log triage benchmark"
+  },
+  "caveat": "Results measure deterministic synthetic signature triage, evidence citation, and schema behavior. They do not measure verified silicon root-cause accuracy or production generalization.",
+  "systems": {
+    "silicon_debug-core": {
+      "category_macro_f1": 1.0,
+      "anomaly_recall": 1.0,
+      "evidence_recall_at_3": 0.9333333333333333,
+      "citation_precision": 1.0,
+      "schema_success": 1.0,
+      "invented_evidence_ids": 0
+    },
+    "keyword-baseline": {
+      "category_macro_f1": 0.8333333333333334,
+      "anomaly_recall": 1.0,
+      "evidence_recall_at_3": 0.8,
+      "citation_precision": 1.0,
+      "schema_success": 1.0,
+      "invented_evidence_ids": 0
+    }
+  },
+  "sources": {
+    "core": "evals/core_results.json",
+    "baseline": "evals/baseline_results.json"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "scope": "observable audit of public LogHub 2k structured samples",
+  "caveat": "These statistics are not root-cause labels or diagnostic evaluation results.",
+  "datasets": [
+    {
+      "file": "data/sample/loghub_2k/HDFS_2k.log_structured.csv",
+      "sha256": "729df59774e3dde934044028546d2a55d5e3d4370b9d12fcebbe4c087b2bf7b4",
+      "rows": 2000,
+      "columns": [
+        "LineId",
+        "Date",
+        "Time",
+        "Pid",
+        "Level",
+        "Component",
+        "Content",
+        "EventId",
+        "EventTemplate"
+      ],
+      "unique_components": 6,
+      "unique_event_ids": 14,
+      "top_components": [
+        {
+          "value": "dfs.FSNamesystem",
+          "count": 659
+        },
+        {
+          "value": "dfs.DataNode$PacketResponder",
+          "count": 603
+        },
+        {
+          "value": "dfs.DataNode$DataXceiver",
+          "count": 454
+        },
+        {
+          "value": "dfs.FSDataset",
+          "count": 263
+        },
+        {
+          "value": "dfs.DataBlockScanner",
+          "count": 20
+        },
+        {
+          "value": "dfs.DataNode",
+          "count": 1
+        }
+      ],
+      "levels": [
+        {
+          "value": "INFO",
+          "count": 1920
+        },
+        {
+          "value": "WARN",
+          "count": 80
+        }
+      ],
+      "top_event_ids": [
+        {
+          "value": "E6",
+          "count": 314
+        },
+        {
+          "value": "E10",
+          "count": 311
+        },
+        {
+          "value": "E11",
+          "count": 292
+        },
+        {
+          "value": "E13",
+          "count": 292
+        },
+        {
+          "value": "E9",
+          "count": 263
+        },
+        {
+          "value": "E8",
+          "count": 224
+        },
+        {
+          "value": "E7",
+          "count": 115
+        },
+        {
+          "value": "E1",
+          "count": 80
+        },
+        {
+          "value": "E3",
+          "count": 80
+        },
+        {
+          "value": "E14",
+          "count": 20
+        },
+        {
+          "value": "E4",
+          "count": 5
+        },
+        {
+          "value": "E12",
+          "count": 2
+        },
+        {
+          "value": "E2",
+          "count": 1
+        },
+        {
+          "value": "E5",
+          "count": 1
+        }
+      ],
+      "label_field_present": false,
+      "labels": []
+    },
+    {
+      "file": "data/sample/loghub_2k/BGL_2k.log_structured.csv",
+      "sha256": "3fe74103c0b02a28514534e2a47257a3f770135ca61afd425bbd3b9d6a31fe26",
+      "rows": 2000,
+      "columns": [
+        "LineId",
+        "Label",
+        "Timestamp",
+        "Date",
+        "Node",
+        "Time",
+        "NodeRepeat",
+        "Type",
+        "Component",
+        "Level",
+        "Content",
+        "EventId",
+        "EventTemplate"
+      ],
+      "unique_components": 5,
+      "unique_event_ids": 120,
+      "top_components": [
+        {
+          "value": "KERNEL",
+          "count": 1820
+        },
+        {
+          "value": "APP",
+          "count": 107
+        },
+        {
+          "value": "DISCOVERY",
+          "count": 35
+        },
+        {
+          "value": "MMCS",
+          "count": 35
+        },
+        {
+          "value": "HARDWARE",
+          "count": 3
+        }
+      ],
+      "levels": [
+        {
+          "value": "INFO",
+          "count": 1597
+        },
+        {
+          "value": "FATAL",
+          "count": 347
+        },
+        {
+          "value": "ERROR",
+          "count": 41
+        },
+        {
+          "value": "WARNING",
+          "count": 8
+        },
+        {
+          "value": "SEVERE",
+          "count": 7
+        }
+      ],
+      "top_event_ids": [
+        {
+          "value": "E67",
+          "count": 721
+        },
+        {
+          "value": "E70",
+          "count": 208
+        },
+        {
+          "value": "E4",
+          "count": 121
+        },
+        {
+          "value": "E3",
+          "count": 109
+        },
+        {
+          "value": "E18",
+          "count": 92
+        },
+        {
+          "value": "E12",
+          "count": 71
+        },
+        {
+          "value": "E55",
+          "count": 60
+        },
+        {
+          "value": "E7",
+          "count": 51
+        },
+        {
+          "value": "E77",
+          "count": 42
+        },
+        {
+          "value": "E74",
+          "count": 35
+        },
+        {
+          "value": "E52",
+          "count": 30
+        },
+        {
+          "value": "E34",
+          "count": 30
+        },
+        {
+          "value": "E76",
+          "count": 21
+        },
+        {
+          "value": "E28",
+          "count": 21
+        },
+        {
+          "value": "E26",
+          "count": 19
+        }
+      ],
+      "label_field_present": true,
+      "labels": [
+        {
+          "value": "-",
+          "count": 1857
+        },
+        {
+          "value": "KERNDTLB",
+          "count": 60
+        },
+        {
+          "value": "KERNSTOR",
+          "count": 30
+        },
+        {
+          "value": "APPSEV",
+          "count": 17
+        },
+        {
+          "value": "KERNMNTF",
+          "count": 11
+        },
+        {
+          "value": "KERNTERM",
+          "count": 7
+        },
+        {
+          "value": "KERNREC",
+          "count": 5
+        },
+        {
+          "value": "APPRES",
+          "count": 4
+        },
+        {
+          "value": "APPREAD",
+          "count": 3
+        },
+        {
+          "value": "KERNRTSP",
+          "count": 2
+        },
+        {
+          "value": "APPTO",
+          "count": 2
+        },
+        {
+          "value": "APPCHILD",
+          "count": 1
+        },
+        {
+          "value": "APPOUT",
+          "count": 1
+        }
+      ],
+      "non_alert_rows": 1857,
+      "alert_tagged_rows": 143
+    }
+  ]
+}

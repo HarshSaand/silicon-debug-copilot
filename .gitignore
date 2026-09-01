@@ -1,0 +1,29 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Downloaded datasets and local indexes
+data/raw/
+data/private/
+
+# Runtime files
+*.log
+tmp/
+
+# Keep the small, generated benchmark artifacts currently tracked under
+# data/sample, evals and outputs. Add large model/index artifacts explicitly.

@@ -1,0 +1,20 @@
+{
+  "source": "https://github.com/logpai/loghub",
+  "usage": "parser/ingestion smoke tests only",
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/logpai/loghub/master/HDFS/HDFS_2k.log_structured.csv",
+      "path": "data/sample/loghub_2k/HDFS_2k.log_structured.csv",
+      "bytes": 414635,
+      "sha256": "729df59774e3dde934044028546d2a55d5e3d4370b9d12fcebbe4c087b2bf7b4",
+      "retrieved_utc": "2026-09-01T15:05:39.838906+00:00"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/logpai/loghub/master/BGL/BGL_2k.log_structured.csv",
+      "path": "data/sample/loghub_2k/BGL_2k.log_structured.csv",
+      "bytes": 425129,
+      "sha256": "3fe74103c0b02a28514534e2a47257a3f770135ca61afd425bbd3b9d6a31fe26",
+      "retrieved_utc": "2026-09-01T15:05:39.894591+00:00"
+    }
+  ]
+}
