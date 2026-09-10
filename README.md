@@ -8,6 +8,20 @@ The current prototype parses UTF-8 logs, looks for six supported signatures, gat
 
 The paired abstention example is saved at [`outputs/screenshots/abstained-ambiguous.jpg`](outputs/screenshots/abstained-ambiguous.jpg).
 
+## Dataset at a glance
+
+The diagnostic benchmark contains **80 synthetic incidents**, not real silicon failures. One incident is a short sequence of timestamped log messages with severity and line IDs, plus a reference category, anomaly/answerability labels, supporting evidence IDs and runbook IDs. It covers six supported fault families, ambiguous/mixed incidents and hard-normal examples that deliberately reuse fault vocabulary.
+
+| Data component | Size | Use |
+|---|---:|---|
+| Synthetic training partition | 40 incidents | Development fixtures; no model is trained |
+| Synthetic development partition | 16 incidents | Development checks |
+| Frozen synthetic test partition | 24 incidents | Reported regression evaluation |
+| Public HDFS structured sample | 2,000 log rows | Parser/ingestion smoke tests only |
+| Public BGL structured sample | 2,000 log rows | Parser/ingestion smoke tests only |
+
+The synthetic cases use JSONL (one incident per line); the public LogHub samples use structured CSV. The public samples are **not** additional diagnostic test incidents and do not validate the synthetic benchmark's root-cause labels. See [`DATA_PROVENANCE.md`](DATA_PROVENANCE.md) and [`evals/frozen_benchmark.jsonl`](evals/frozen_benchmark.jsonl).
+
 ## Technical snapshot
 
 | Question | Implementation |
