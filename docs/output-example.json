@@ -1,0 +1,147 @@
+{
+  "title": "Silicon Debug Copilot",
+  "subtitle": "A supported log signature with cited evidence",
+  "eyebrow": "ACTUAL WORKFLOW OUTPUT · SYNTHETIC INPUT",
+  "context": "SYN-PCIE-LINK-01 · local deterministic triage · no corrective actions executed",
+  "blocks": [
+    [
+      "INPUT LOG",
+      "2026-01-01T00:00:00.000 [INFO] pcie link training started port=1\n2026-01-01T00:00:00.250 [ERROR] negotiated Gen3 x4 expected Gen4 x8\n2026-01-01T00:00:00.500 [ERROR] link remains degraded after retrain"
+    ],
+    [
+      "CLASSIFICATION",
+      "{\"label\": \"pcie_link_fault\", \"confidence\": 0.68}"
+    ],
+    [
+      "READ-ONLY NEXT CHECK",
+      "[{\"action\": \"Inspect PCIe AER counters and compare link width/speed with a known-good run.\", \"rationale\": \"This read-only check can confirm or contradict the leading evidence-backed hypothesis.\", \"risk\": \"read_only\"}]"
+    ]
+  ],
+  "raw": {
+    "case": {
+      "answerable": true,
+      "case_id": "SYN-PCIE-LINK-01",
+      "category": "pcie_link",
+      "dataset": "synthetic-v1",
+      "forbidden_claims": [
+        "verified silicon root cause",
+        "production hardware failure"
+      ],
+      "generation_seed": 20260901,
+      "gold_action": "follow_runbook",
+      "gold_evidence_line_ids": [
+        "L2",
+        "L3"
+      ],
+      "gold_runbook_ids": [
+        "RB-PCIE"
+      ],
+      "is_anomaly": true,
+      "lines": [
+        {
+          "line_id": "L1",
+          "message": "pcie link training started port=1",
+          "severity": "INFO",
+          "timestamp_offset_ms": 0
+        },
+        {
+          "line_id": "L2",
+          "message": "negotiated Gen3 x4 expected Gen4 x8",
+          "severity": "ERROR",
+          "timestamp_offset_ms": 250
+        },
+        {
+          "line_id": "L3",
+          "message": "link remains degraded after retrain",
+          "severity": "ERROR",
+          "timestamp_offset_ms": 500
+        }
+      ],
+      "split": "train",
+      "synthetic": true
+    },
+    "report": {
+      "incident_id": "SYN-PCIE-LINK-01",
+      "classification": {
+        "label": "pcie_link_fault",
+        "confidence": 0.68
+      },
+      "symptoms": [
+        {
+          "text": "Observed pcie link fault signature.",
+          "evidence_ids": [
+            "log:443922058494",
+            "log:7a42e8f3cac1"
+          ]
+        }
+      ],
+      "hypotheses": [
+        {
+          "rank": 1,
+          "statement": "The evidence is consistent with a PCIe link or transaction fault.",
+          "supporting_evidence_ids": [
+            "log:443922058494",
+            "log:7a42e8f3cac1",
+            "doc:RB-PCIE"
+          ],
+          "contradicting_evidence_ids": [],
+          "confidence": 0.68
+        }
+      ],
+      "next_diagnostics": [
+        {
+          "action": "Inspect PCIe AER counters and compare link width/speed with a known-good run.",
+          "rationale": "This read-only check can confirm or contradict the leading evidence-backed hypothesis.",
+          "risk": "read_only"
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "log:443922058494",
+          "source": "log",
+          "text": "2026-01-01T00:00:00.250 [ERROR] negotiated Gen3 x4 expected Gen4 x8",
+          "provenance": "incident.log:line:2"
+        },
+        {
+          "evidence_id": "log:7a42e8f3cac1",
+          "source": "log",
+          "text": "2026-01-01T00:00:00.500 [ERROR] link remains degraded after retrain",
+          "provenance": "incident.log:line:3"
+        },
+        {
+          "evidence_id": "log:eae003e25e0e",
+          "source": "log",
+          "text": "2026-01-01T00:00:00.000 [INFO] pcie link training started port=1",
+          "provenance": "incident.log:line:1"
+        },
+        {
+          "evidence_id": "doc:RB-PCIE",
+          "source": "doc",
+          "text": "# PCIe and link triage\n\nRunbook ID: `RB-PCIE`\n\nUse when logs explicitly report link training, width/speed degradation, replay,\nor an uncorrectable link event.\n\n1. Record negotiated generation and lane width.\n2. Check whether retraining restored the expected state.\n3. Preserve link/AER evidence and timestamps.\n4. Compare firmware, topology, and power-state changes near the event.\n5. Escalate persistent degradation or uncorrectable errors.\n\nThe benchmark uses simulated link messages; it does not validate real PCIe\nelectrical behavior.\n\n",
+          "provenance": "reviewed local runbook:pcie_link.md"
+        }
+      ],
+      "abstained": false,
+      "abstain_reason": null,
+      "limitations": [
+        "This report identifies log signatures, not a confirmed physical root cause.",
+        "Public or synthetic data should not be treated as production silicon validation."
+      ],
+      "trace_id": "99678d7890ab470ab246e850051256e9"
+    }
+  },
+  "note": "The supplied incident is a synthetic regression fixture. This demonstrates actual parsing, evidence references and read-only triage, not confirmed physical silicon diagnosis or a trained language model.",
+  "input": "Timestamped synthetic PCIe log fixture",
+  "output": "Supported signature, evidence IDs and read-only next diagnostic",
+  "sources": [
+    {
+      "path": "evals/frozen_benchmark.jsonl",
+      "sha256": "83117600460df90f67dfbea4ef6abcb95a46a656163bd211645751922b89c6d6"
+    }
+  ],
+  "source_repository": "https://github.com/HarshSaand/silicon-debug-copilot",
+  "extraction": "python docs/extract_showcase.py --source /path/to/reproduced/project",
+  "dataset_url": "https://github.com/HarshSaand/silicon-debug-copilot/blob/main/evals/frozen_benchmark.jsonl",
+  "source_code_commit": "59060d2cc637720f795c3f195034c8042af6957d",
+  "extractor_sha256": "3b077b005e7ac34d233e256034efb05e7b144c907509aaaa2edf2694a7f62d75"
+}

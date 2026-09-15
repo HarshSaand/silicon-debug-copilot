@@ -1,5 +1,30 @@
 # Silicon Debug Copilot — Evidence-Grounded System-Log Triage
 
+## Actual output example
+
+![A supported log signature with cited evidence.](docs/output-showcase.png)
+
+**Input:** Timestamped synthetic PCIe log fixture. **Output:** Supported signature, evidence IDs and read-only next diagnostic.
+
+The supplied incident is a synthetic regression fixture. This demonstrates actual parsing, evidence references and read-only triage, not confirmed physical silicon diagnosis or a trained language model.
+
+[Inspect the full output record and source hashes](docs/output-example.json) · [Open the standalone review page](docs/output-showcase.html) · [Original dataset](https://github.com/HarshSaand/silicon-debug-copilot/blob/main/evals/frozen_benchmark.jsonl)
+
+### Reproduce this example
+
+Follow the project setup/data steps below first. `--source` points to a reproduced project directory with its local data, saved predictions or checkpoints; use `.` when running in that directory. The exporter never silently invents missing inputs.
+
+```bash
+python docs/extract_showcase.py --source /path/to/reproduced/project
+python docs/render_showcase.py
+# Open docs/output-showcase.html directly, or capture the image with Chrome:
+npm install --no-save playwright
+node docs/capture_showcase.mjs
+```
+
+The JSON records the exact source-relative filenames, SHA-256 hashes and code revision. Rendering uses saved values; displayed decimals are rounded only for readability. Raw datasets and model checkpoints remain outside this documentation bundle.
+
+
 Silicon Debug Copilot asks a narrow question: can a small, local workflow help an engineer triage a failed system-log run without inventing a cause?
 
 The current prototype parses UTF-8 logs, looks for six supported signatures, gathers the matching log lines, and returns a structured hypothesis or abstains. It exposes the workflow through FastAPI and a Streamlit workbench. It does not diagnose silicon, inspect waveforms or registers, call a language model, or execute corrective actions.
