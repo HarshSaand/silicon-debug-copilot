@@ -1,5 +1,7 @@
 # Silicon Debug Copilot — Evidence-Grounded System-Log Triage
 
+[Read the project report (PDF)](docs/PROJECT_REPORT.pdf) · [Explore the explanation and flow diagram](docs/PROJECT_REPORT.md)
+
 ## Actual output example
 
 ![A supported log signature with cited evidence.](docs/output-showcase.png)
